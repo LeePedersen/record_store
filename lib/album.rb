@@ -36,11 +36,9 @@ class Album
 
   def self.find_by_name(name)
     x = 1
-    while x < @@albums.length
+    while x <= @@albums.length
       if @@albums[x].name == name
         return @@albums[x]
-      else
-        "no match"
       end
       x = x + 1
     end

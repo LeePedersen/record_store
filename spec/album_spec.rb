@@ -45,7 +45,7 @@ describe('.#Album') do
 
   describe('.find_by_name') do
     it("finds an album by name") do
-      expect(Album.find_by_name("Blue")).to(eq(@album1))
+      expect(Album.find_by_name("Bdfsfdsue")).to(eq(@album1))
     end
   end
 

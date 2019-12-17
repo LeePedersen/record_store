@@ -1,12 +1,4 @@
 <h1>Primary Records</h1>
 <h3>Your search results:</h3>
 
-<% if @albums.any? %>
-  <ul>
-    <% @albums.each do |album| %>
-    <li><a href="/albums/<%= album.id %>"><%= album.name %></a></li>
-    <% end %>
-  </ul>
-<% else %>
-<p>There are currently no records to display.</p>
-<% end %>
+<%= @album.name %>
