@@ -10,12 +10,13 @@ get('/') do
 end
 
 get('/albums') do
-  "This route will show a list of all albums."
+  erb(:search_results)
+  # "This route will show a list of all albums."
 end
 
 post('/albums') do
   name = params[:album_name]
-  album = Album.new(name, nil)
+  album = Album.new(name, artist, genre, year, nil)
   album.save()
   @albums = Album.all
   erb(:albums)
@@ -37,7 +38,7 @@ end
 
 patch('/albums/:id') do
   @album = Album.find(params[:id].to_i())
-  @album.update(params[:name])
+  @album.update(params[:name], params[:artist], params[:genre], params[:year])
   @albums = Album.all
   erb(:albums)
 end
