@@ -68,18 +68,18 @@ describe '#Album' do
       expect(Album.all).to(eq([album2]))
     end
   end
-  #
-  # describe('.search') do
-  #   it('searches for the given album name') do
-  #     Album.clear()
-  #     album = Album.new("Giant Steps", nil, 2000, "bluegrass", "old mcdonald", nil)
-  #     album.save()
-  #     album3 = Album.new("Giant Steps", nil, 2010, "bluegrass", "old mcdonald", nil)
-  #     album3.save()
-  #     album2 = Album.new("Blue", nil, 1990, "pop", "Aba", nil)
-  #     album2.save()
-  #     expect(Album.search("giant steps")).to(eq([album, album3]))
-  #   end
-  # end
-  #
+
+  describe('.search') do
+    it('searches for the given album name') do
+      Album.clear()
+      album = Album.new({:name => "Giant Steps", :id => nil})
+      album.save()
+      album3 = Album.new({:name => "Giant Steps", :id => nil})
+      album3.save()
+      album2 = Album.new({:name => "Blue", :id => nil})
+      album2.save()
+      expect(Album.search("Giant Steps")).to(eq([album, album3]))
+    end
+  end
+
 end
