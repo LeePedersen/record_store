@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit Artist</title>
+  </head>
+  <body>
+    <h1>Update <%= @artist.name()%></h1>
+    <form action="/artists/<%= @artist.id() %>" method="post">
+      <input type="hidden" name="_method" value="patch">
+
+      <label for="name">Rename Artist</label>
+      <input type="text" name="name" id="name">
+
+      <label for="album">Change Artist Album</label>
+      <input type="text" name="album" id="album">
+
+      <button type="submit">Update</button>
+    </form>
+    <p><a href="/artists">Return to Artist List</a></p>
+
+    <form action="/artists/<%= @artist.id() %>" method="post">
+      <input type="hidden" name="_method" value="delete">
+
+      <button type="submit">Delete Artist</button>
+    </form>
+  </body>
+</html>
